@@ -1,0 +1,27 @@
+name: Monitor Kasanova OVS
+ 
+on:
+  schedule:
+    - cron: "*/15 * * * *"  # esegue ogni 15 minuti
+  workflow_dispatch:
+ 
+jobs:
+  run:
+    runs-on: ubuntu-latest
+ 
+    steps:
+      - uses: actions/checkout@v4
+ 
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+ 
+      - name: Install dependencies
+        run: pip install feedparser requests
+ 
+      - name: Run monitor
+        env:
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+          CHAT_ID: ${{ secrets.CHAT_ID }}
+        run: python monitor.py
