@@ -12,7 +12,7 @@ CHAT_ID = os.environ["CHAT_ID"]
 FILE_URL_INVIATI = "url_inviati.txt"
  
 def invia_telegram(testo):
-    url = fhttps://api.telegram.org/bot{BOT_TOKEN}/sendMessage
+    url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
     requests.post(url, data={
         "chat_id": CHAT_ID,
         "text": testo,
