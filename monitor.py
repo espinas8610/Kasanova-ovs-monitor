@@ -4,7 +4,7 @@ from datetime import datetime, timezone
 import os
  
 KEYWORD = "kasanova ovs"
-RSS_URL = f"https://news.google.com/rss/search?q={KEYWORD.replace(' ', '+')}&hl=it&gl=IT&ceid=IT:it
+RSS_URL = f"https://news.google.com/rss/search?q={KEYWORD.replace(' ', '+')}&hl=it&gl=IT&ceid=IT:it"
  
 BOT_TOKEN = os.environ["BOT_TOKEN"]
 CHAT_ID = os.environ["CHAT_ID"]
